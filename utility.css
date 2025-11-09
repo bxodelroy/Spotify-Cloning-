@@ -1,0 +1,29 @@
+.flex{
+    display: flex;
+}
+.circle{
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    background-color: #1F1F1F;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    transition: all 0.4s;
+}
+
+.hidden{
+    opacity: 0;
+}
+.hidden-display{
+    display: none;
+}
+
+.hide-no-mouse{
+    opacity: 0;
+    pointer-events: none;
+}
+.hover-color{
+    background-color: #1F1F1F;
+}

@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify Clone</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="utility.css">
+    <script src="script.js" defer></script>
+
+</head>
+
+<body>
+    <nav>
+        <div class="left-bar circle">
+            <i class="fa-solid fa-bars" style="color: #ffffff;"></i>
+        </div>
+        <img class="logo" src="images/logo.png" alt="" srcset="">
+        <div class="home-logo circle">
+            <i id="home" class="fa-solid fa-house fa-lg" style="color: white;"></i>
+        </div>
+        <div class="small-search circle">
+            <i class="fa-solid fa-magnifying-glass" style="color: #ffffff;"></i>
+        </div>
+
+        <div class="input-container">
+            <svg xmlns="http://www.w3.org/2000/svg" class="search-icon"
+                viewBox="0 0 640 640"><!--!Font Awesome Free v7.0.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+                <path fill="#b3b3b3"
+                    d="M480 272C480 317.9 465.1 360.3 440 394.7L566.6 521.4C579.1 533.9 579.1 554.2 566.6 566.7C554.1 579.2 533.8 579.2 521.3 566.7L394.7 440C360.3 465.1 317.9 480 272 480C157.1 480 64 386.9 64 272C64 157.1 157.1 64 272 64C386.9 64 480 157.1 480 272zM272 416C351.5 416 416 351.5 416 272C416 192.5 351.5 128 272 128C192.5 128 128 192.5 128 272C128 351.5 192.5 416 272 416z" />
+            </svg>
+            <input type="text" placeholder=" What do you want to play?">
+        </div>
+
+        <div class="nav-texts">
+            <p><b>Premium</b></p>
+            <p><b>Support</b></p>
+            <p><b>Download</b></p>
+        </div>
+        <span><b>|</b></span>
+
+        <div class="install">
+            <i class="fa-solid fa-circle-down"></i>
+            <p><b>Install App</b></p>
+
+        </div>
+        <div class="sign-up">
+            <p><b>Sign Up</b></p>
+        </div>
+        <div class="log-in">
+            <p>Log in</p>
+        </div>
+
+
+    </nav>
+    <div class="container flex">
+        <div class="left flex">
+            <div class="library flex">
+                <p>Your Library</p>
+
+                <p class="cross hidden"><i class="fa-solid fa-xmark" style="color: #ffffff;"></i></p>
+            </div>
+
+            <div class="playlist flex">
+                <div class="play-top">
+                    <p class="p-top">Create your first playlist</p>
+                    <p class="middle">It's easy, we'll help you</p>
+                </div>
+
+                <div class="create">
+                    <p>Create Playlist</p>
+                </div>
+            </div>
+
+            <div class="playlist flex">
+                <div class="play-top">
+                    <p class="p-top">Let's find some podcasts to follow</p>
+                    <p class="middle">We'll keep you updated</p>
+                </div>
+
+                <div class="create">
+                    <p>Browse podcasts</p>
+                </div>
+            </div>
+
+            <div class="left-texts">
+                <div class="lt-one">
+                    <p></p>
+                </div>
+            </div>
+
+            <div class="legal-links">
+                <a href="https://www.spotify.com/in-en/legal/">Legal</a>
+                <a href="https://www.spotify.com/in-en/safetyandprivacy/">Safety & Privacy Center</a>
+                <a href="https://www.spotify.com/in-en/legal/privacy-policy/">Privacy Policy</a>
+                <a href="https://www.spotify.com/in-en/legal/cookies-policy/">Cookies</a>
+                <a href="https://www.spotify.com/in-en/legal/privacy-policy/#s3">About Ads</a>
+                <a href="https://www.spotify.com/in-en/accessibility/">Accessibility</a>
+                <a href="https://www.spotify.com/legal/cookies-policy/" target="_blank" rel="noopener">Cookies</a>
+            </div>
+
+            <div class="lang flex">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" width="24" height="24">
+                    <path
+                        d="M8.152 16H8a8 8 0 1 1 .152 0m-.41-14.202c-.226.273-.463.713-.677 1.323-.369 1.055-.626 2.496-.687 4.129h3.547c-.06-1.633-.318-3.074-.687-4.129-.213-.61-.45-1.05-.676-1.323-.194-.235-.326-.285-.385-.296h-.044c-.055.007-.19.052-.391.296M4.877 7.25c.062-1.771.34-3.386.773-4.624q.148-.427.329-.806a6.51 6.51 0 0 0-4.436 5.43zm-3.334 1.5a6.51 6.51 0 0 0 4.436 5.43 8 8 0 0 1-.33-.806c-.433-1.238-.71-2.853-.772-4.624zm4.835 0c.061 1.633.318 3.074.687 4.129.214.61.451 1.05.677 1.323.202.244.336.29.391.297l.044-.001c.06-.01.19-.061.385-.296.226-.273.463-.713.676-1.323.37-1.055.626-2.496.687-4.129zm5.048 0c-.061 1.771-.339 3.386-.772 4.624q-.123.353-.268.674a6.5 6.5 0 0 0 4.071-5.298zm3.031-1.5a6.51 6.51 0 0 0-4.071-5.298q.145.322.268.674c.433 1.238.711 2.853.772 4.624z">
+                    </path>
+                </svg>
+                <p>English</p>
+            </div>
+        </div>
+
+
+
+        <div class="right">
+            <div class="right-heading">
+                <p><b>Trending Now</b></p>
+            </div>
+
+            <div class="song-cards">
+
+                <div class="card card1">
+                    <img src="images/c1.jpg" alt="" srcset="">
+                    <p class="song"><b>Doin'Time</b></p>
+                    <p class="name">Lana Del Rey</p>
+
+                    <div class="play hidden top-play">
+                        <div class="play-button" data-song="0">
+                            <i class="fa-solid fa-play" style="color: #000000;"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card card2">
+                    <img src="images/c2.jpg" alt="" srcset="">
+                    <p class="song"><b>Woh</b></p>
+                    <p class="name">Khatth,Sthiti</p>
+
+                    <div class="play hidden top-play">
+                        <div class="play-button" data-song="1">
+                            <i class="fa-solid fa-play" style="color: #000000;"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card card3">
+                    <img src="images/c3.jpg" alt="" srcset="">
+                    <p class="song"><b>Don't Cry</b></p>
+                    <p class="name">Guns N'Roses</p>
+
+                    <div class="play hidden top-play">
+                        <div class="play-button" data-song="2">
+                            <i class="fa-solid fa-play" style="color: #000000;"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card card4">
+                    <img src="images/c4.jpeg" alt="" srcset="">
+                    <p class="song"><b>Tu Mera</b></p>
+                    <p class="name">Baibhab Roy</p>
+
+                    <div class="play hidden top-play">
+                        <div class="play-button" data-song="3">
+                            <i class="fa-solid fa-play" style="color: #000000;"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="images/c5.jpg" alt="" srcset="">
+                    <p class="song"><b>So Far Away</b></p>
+                    <p class="name">Avenged Sevenfold </p>
+
+                    <div class="play hidden top-play">
+                        <div class="play-button" data-song="4">
+                            <i class="fa-solid fa-play" style="color: #000000;"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="images/c6.jpeg" alt="" srcset="">
+                    <p class="song"><b>Tum Ho</b></p>
+                    <p class="name">Mohit Chauhan </p>
+
+                    <div class="play hidden top-play">
+                        <div class="play-button" data-song="5">
+                            <i class="fa-solid fa-play" style="color: #000000;"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="images/c7.jpg" alt="" srcset="">
+                    <p class="song"><b>Come As You Are</b></p>
+                    <p class="name">Nirvana</p>
+
+                    <div class="play hidden top-play">
+                        <div class="play-button" data-song="6">
+                            <i class="fa-solid fa-play" style="color: #000000;"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="images/c8.jpg" alt="" srcset="">
+                    <p class="song"><b>Fitoor</b></p>
+                    <p class="name">Arijit Singh</p>
+
+                    <div class="play hidden top-play">
+                        <div class="play-button" data-song="7">
+                            <i class="fa-solid fa-play" style="color: #000000;"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="images/c9.jpg" alt="" srcset="">
+                    <p class="song"><b>Billie Jean</b></p>
+                    <p class="name">Michael Jackson</p>
+
+                    <div class="play hidden top-play">
+                        <div class="play-button" data-song="8">
+                            <i class="fa-solid fa-play" style="color: #000000;"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="images/c10.jpg" alt="" srcset="">
+                    <p class="song"><b>Shallow</b></p>
+                    <p class="name">Lady Gaga,Bradley Cooper</p>
+
+                    <div class="play hidden top-play">
+                        <div class="play-button" data-song="9">
+                            <i class="fa-solid fa-play" style="color: #000000;"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="images/c11.jpeg" alt="" srcset="">
+                    <p class="song"><b>The Unforgiven</b></p>
+                    <p class="name">Metallica</p>
+
+                    <div class="play hidden top-play">
+                        <div class="play-button" data-song="10">
+                            <i class="fa-solid fa-play" style="color: #000000;"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="images/c12.jpeg" alt="" srcset="">
+                    <p class="song"><b>The Emptiness Machine</b></p>
+                    <p class="name">Linkin Park</p>
+
+                    <div class="play hidden top-play">
+                        <div class="play-button" data-song="11">
+                            <i class="fa-solid fa-play" style="color: #000000;"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="images/c13.jpg" alt="" srcset="">
+                    <p class="song"><b>Beggin'</b></p>
+                    <p class="name">Maneskin</p>
+
+                    <div class="play hidden top-play">
+                        <div class="play-button" data-song="12">
+                            <i class="fa-solid fa-play" style="color: #000000;"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="images/c14.jpg" alt="" srcset="">
+                    <p class="song"><b>High On You</b></p>
+                    <p class="name">Jind Universe</p>
+
+                    <div class="play hidden top-play">
+                        <div class="play-button" data-song="13">
+                            <i class="fa-solid fa-play" style="color: #000000;"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="images/c15.png" alt="" srcset="">
+                    <p class="song"><b>Chaandni</b></p>
+                    <p class="name">Sufr,Adil</p>
+
+                    <div class="play hidden top-play">
+                        <div class="play-button" data-song="14">
+                            <i class="fa-solid fa-play" style="color: #000000;"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="images/c16.png" alt="" srcset="">
+                    <p class="song"><b>Sukoon</b></p>
+                    <p class="name">Salim-Sulaiman,Arijit Singh</p>
+
+                    <div class="play hidden top-play">
+                        <div class="play-button" data-song="15">
+                            <i class="fa-solid fa-play" style="color: #000000;"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="images/c17.JPG" alt="" srcset="">
+                    <p class="song"><b>For A Reason</b></p>
+                    <p class="name">Karan Aujhla</p>
+
+                    <div class="play hidden top-play">
+                        <div class="play-button" data-song="16">
+                            <i class="fa-solid fa-play" style="color: #000000;"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="images/c18.jpeg" alt="" srcset="">
+                    <p class="song"><b>Layla</b></p>
+                    <p class="name">Derek and The Dominos</p>
+
+                    <div class="play hidden top-play">
+                        <div class="play-button" data-song="17">
+                            <i class="fa-solid fa-play" style="color: #000000;"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="images/c19.jpeg" alt="" srcset="">
+                    <p class="song"><b>Paranoid</b></p>
+                    <p class="name">Black Sabbath</p>
+
+                    <div class="play hidden top-play">
+                        <div class="play-button" data-song="18">
+                            <i class="fa-solid fa-play" style="color: #000000;"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="images/c20.JPG" alt="" srcset="">
+                    <p class="song"><b>21 Guns</b></p>
+                    <p class="name">Green Day</p>
+
+                    <div class="play hidden top-play">
+                        <div class="play-button" data-song="19">
+                            <i class="fa-solid fa-play" style="color: #000000;"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="images/c21.jpeg" alt="" srcset="">
+                    <p class="song"><b>Spillways</b></p>
+                    <p class="name">Ghost</p>
+
+                    <div class="play hidden top-play">
+                        <div class="play-button" data-song="20">
+                            <i class="fa-solid fa-play" style="color: #000000;"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="images/c22.jpeg" alt="" srcset="">
+                    <p class="song"><b>Dhun</b></p>
+                    <p class="name">Arijit Singh</p>
+
+                    <div class="play hidden top-play">
+                        <div class="play-button" data-song="21">
+                            <i class="fa-solid fa-play" style="color: #000000;"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="images/c23.jpeg" alt="" srcset="">
+                    <p class="song"><b>Say Yes To Heaven</b></p>
+                    <p class="name">Lana Del Rey</p>
+
+                    <div class="play hidden top-play">
+                        <div class="play-button" data-song="22">
+                            <i class="fa-solid fa-play" style="color: #000000;"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="images/c24.jpeg" alt="" srcset="">
+                    <p class="song"><b>Young & Beautiful</b></p>
+                    <p class="name">Lana Del Rey</p>
+
+                    <div class="play hidden top-play">
+                        <div class="play-button" data-song="23">
+                            <i class="fa-solid fa-play" style="color: #000000;"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="images/c25.jpg" alt="" srcset="">
+                    <p class="song"><b>Late Guests</b></p>
+                    <p class="name">Ansh</p>
+
+                    <div class="play hidden top-play">
+                        <div class="play-button" data-song="24">
+                            <i class="fa-solid fa-play" style="color: #000000;"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="images/c26.PNG" alt="" srcset="">
+                    <p class="song"><b>The Abyss</b></p>
+                    <p class="name">Lana Del Rey,The Weeknd</p>
+
+                    <div class="play hidden top-play">
+                        <div class="play-button" data-song="25">
+                            <i class="fa-solid fa-play" style="color: #000000;"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="images/c27.jpeg" alt="" srcset="">
+                    <p class="song"><b>Bang Bang</b></p>
+                    <p class="name">Benny Dayal,Neeti Mohan</p>
+
+                    <div class="play hidden top-play">
+                        <div class="play-button" data-song="26">
+                            <i class="fa-solid fa-play" style="color: #000000;"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="images/c28.jpeg" alt="" srcset="">
+                    <p class="song"><b>Mehndi Laga Ke Rakhna</b></p>
+                    <p class="name">Udit Narayan,Lata Mangeshkar</p>
+
+                    <div class="play hidden top-play">
+                        <div class="play-button" data-song="27">
+                            <i class="fa-solid fa-play" style="color: #000000;"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="images/c29.jpg" alt="" srcset="">
+                    <p class="song"><b>Dil Ka Jo Haal Hai</b></p>
+                    <p class="name">Abhijeet Bhattacharya,Shreya Ghoshal</p>
+
+                    <div class="play hidden top-play">
+                        <div class="play-button" data-song="28">
+                            <i class="fa-solid fa-play" style="color: #000000;"></i>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="player-box">
+                <div class="display-name">
+
+                </div>
+
+                <div class="bar-buttons">
+
+                    <div class="previous"><i class="fa-solid fa-backward-step" style="color: #000000;"></i></div>
+
+                    <div class="pause-play">
+                        <div class="icon-stack">
+                            <div class="pause"><i class="fa-solid fa-pause" style="color: #000000;"></i></div>
+                            <div id="play" class="hide-no-mouse"><i class="fa-solid fa-play"
+                                    style="color: #000000;"></i></div>
+                        </div>
+
+                    </div>
+
+                    <div class="next"><i class="fa-solid fa-forward-step" style="color: #000000;"></i></div>
+                    <div class="auto-play"><i class="fa-solid fa-repeat" style="color: #000000;"></i>
+                        <span class="auto-text">OFF</span>
+                    </div>
+                    <div class="volume">
+                        <div class="icon-wrapper">
+                            <div class="volume-on"><i class="fa-solid fa-volume-high" style="color: #000000;"></i></div>
+                            <div id="volume-mute" class="hide-no-mouse"><i class="fa-solid fa-volume-xmark"
+                                    style="color: #000000;"></i></div>
+                        </div>
+                        <div class="range">
+                            <input type="range" name="volume" value="50" min="0" max="100">
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="songtime">
+                    0:00
+                </div>
+                <div class="seekbar">
+                    <div class="play-circle"></div>
+                </div>
+                <div class="totaltime">
+                    0:00
+                </div>
+
+
+
+            </div>
+
+        </div>
+    </div>
+
+</body>
+
+</html>

@@ -640,6 +640,10 @@ span {
 
 @media(max-width: 1150px) {
 
+    .song-cards{
+        padding-bottom: 5rem;
+    }
+
 
     .display-name {
         position: absolute;

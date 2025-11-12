@@ -298,7 +298,7 @@ span {
 
 .song-cards {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: wrap;    
 }
 
 .card {
